@@ -159,6 +159,15 @@
     }
 }
 
+- (void)onTagAtIndex: (NSUInteger)index{
+    if (index + 1 > self.tags.count) {
+        return;
+    }
+    if (self.didTapTagAtIndex) {
+        self.didTapTagAtIndex(index);
+    }
+}
+
 #pragma mark - Public
 
 - (void)addTag: (SKTag *)tag {
